@@ -1,7 +1,6 @@
 package PROJET;
 
 import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -92,16 +91,14 @@ public class Connexion  extends JFrame {
 	
 
 	public void actionPerformed(ActionEvent arg0) {
-		String Nom = nom.getText();
-		String Mdp=String.valueOf(mdp.getPassword());		
+				
 		try{
 			 
 			Class.forName("com.mysql.jdbc.Driver");
 	            Connection con =  DriverManager.getConnection(url,user,passwd);
-	            String sql = "SELECT `nom`, `mdp` FROM `personnage` WHERE `nom` = ? AND `mdp` = ? ";
-	            PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql);
-	            pst.setString(1, lblnom.getText());
-	            pst.setString(2, lblmdp.getText());
+	            PreparedStatement pst = (PreparedStatement) con.prepareStatement("SELECT `nom`, `mdp` FROM `personnage` WHERE `nom` = ? AND `mdp` = ? ");
+	            pst.setString(1, nom.getText());
+	            pst.setString(2, mdp.getText());
 	            ResultSet rs = pst.executeQuery();
 	            if(rs.next()){		
 	                JOptionPane.showMessageDialog(null, "Nom et mot de passe valide");
