@@ -1,41 +1,36 @@
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
 
 public class Questionnaire {
-	private String nom;
+	private String Q;
+	
 	private ArrayList list_questions= new ArrayList<Question>();
 	public int rng =(int) (Math.random()*4+1);
 	
 	
-	public Questionnaire(){
-		
+	public Questionnaire(){		
 	}
-	public String GetNom() {
-		return nom;
-	}
-	
 
-	
-	
-	
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		Scanner sc1 = new Scanner(System.in);
+	//public ArrayList<String> Question{
 		
-		System.out.println("Veuillez choisir un theme : ");
-		String s = sc.next();
-		System.out.println("Veuillez choisir une difficulte : ");
-		String s1 = sc1.next();
-		
-		for(int i=0;i<10;i++) {
-			
+	//}
+	
+	
+	
 
+	public static void main(String[] args) throws ClassNotFoundException, SQLException{
+		try{
+			// TODO Auto-generated method stub
+			Connect test= new Connect();
+			System.out.println(test.getQuestion());
+			System.out.println(test.getReponse());
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		;
-	}
+	} 
 
 }
