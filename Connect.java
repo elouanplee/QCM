@@ -124,7 +124,6 @@ public class Connect {
         ResultSet rst;
         rst = stm.executeQuery(sql);
         ArrayList<String> question = new ArrayList<>();
-        ArrayList<String> reponses = new ArrayList<>();
         while (rst.next()) {
             String res = new String(rst.getString("QHst"));
             question.add(res);
@@ -135,23 +134,61 @@ public class Connect {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;
         stm = conn.createStatement();
-        String sql = "Select R1Hst,R2Hst,R3Hst,R4Hst From histoire";
+        String sql = "Select R1Hst From histoire";
         ResultSet rst;
         rst = stm.executeQuery(sql);
         ArrayList<String> reponse = new ArrayList<>();
         while (rst.next()) {
             String res = new String(rst.getString("R1Hst"));
-            String res2 = new String(rst.getString("R2Hst"));
-            String res3 = new String(rst.getString("R3Hst"));
-            String res4 = new String(rst.getString("R4Hst"));
             reponse.add(res);
-            reponse.add(res2);
-            reponse.add(res3);
-            reponse.add(res4);
         }
         return reponse;
     }
-  
+    public static ArrayList<String> getReponse2() throws ClassNotFoundException, SQLException {
+        Connection conn=DriverManager.getConnection(url, user, passwd);
+        java.sql.Statement stm;
+        stm = conn.createStatement();
+        String sql = "Select R2Hst From histoire";
+        ResultSet rst;
+        rst = stm.executeQuery(sql);
+        ArrayList<String> reponse2 = new ArrayList<>();
+        while (rst.next()) {
+            String res2 = new String(rst.getString("R2Hst"));
+            reponse2.add(res2);
+        }
+        return reponse2;
+    }
+    
+    public static ArrayList<String> getReponse3() throws ClassNotFoundException, SQLException {
+        Connection conn=DriverManager.getConnection(url, user, passwd);
+        java.sql.Statement stm;
+        stm = conn.createStatement();
+        String sql = "Select R3Hst From histoire";
+        ResultSet rst;
+        rst = stm.executeQuery(sql);
+        ArrayList<String> reponse3 = new ArrayList<>();
+        while (rst.next()) {
+            String res3 = new String(rst.getString("R3Hst"));
+            reponse3.add(res3);
+
+        }
+        return reponse3;
+    }
+    
+    public static ArrayList<String> getReponse4() throws ClassNotFoundException, SQLException {
+        Connection conn=DriverManager.getConnection(url, user, passwd);
+        java.sql.Statement stm;
+        stm = conn.createStatement();
+        String sql = "Select R4Hst From histoire";
+        ResultSet rst;
+        rst = stm.executeQuery(sql);
+        ArrayList<String> reponse4 = new ArrayList<>();
+        while (rst.next()) {
+            String res4 = new String(rst.getString("R4Hst"));
+            reponse4.add(res4);
+        }
+        return reponse4;
+    }
 
     
   
