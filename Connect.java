@@ -115,7 +115,7 @@ public class Connect {
 
         }*/
         }
-        
+        //Methode pour récupérer les questions de la base de données
     public static ArrayList<String> getQuestion() throws ClassNotFoundException, SQLException {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;
@@ -130,6 +130,7 @@ public class Connect {
         }
         return question;
     }
+    //Même chose mais pour la premiere reponse
     public static ArrayList<String> getReponse() throws ClassNotFoundException, SQLException {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;
@@ -144,6 +145,7 @@ public class Connect {
         }
         return reponse;
     }
+    //Deuxieme reponse
     public static ArrayList<String> getReponse2() throws ClassNotFoundException, SQLException {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;
@@ -158,7 +160,7 @@ public class Connect {
         }
         return reponse2;
     }
-    
+    //Troisieme reponse
     public static ArrayList<String> getReponse3() throws ClassNotFoundException, SQLException {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;
@@ -174,7 +176,7 @@ public class Connect {
         }
         return reponse3;
     }
-    
+    //Quatrieme reponse
     public static ArrayList<String> getReponse4() throws ClassNotFoundException, SQLException {
         Connection conn=DriverManager.getConnection(url, user, passwd);
         java.sql.Statement stm;

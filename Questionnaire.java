@@ -27,6 +27,7 @@ public class Questionnaire {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException{
 		try{
 			// TODO Auto-generated method stub
+			// Etablissement de la connexion et appel des methodes pour récupérer les Questions et les réponses aux questions
 			Connect test= new Connect();
 			list_questions=test.getQuestion();
 			list_rep=test.getReponse();
